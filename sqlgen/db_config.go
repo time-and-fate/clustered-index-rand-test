@@ -56,6 +56,7 @@ type Weight struct {
 	Query_Analyze               int
 	Query_Prepare               int
 	Query_HasLimit              int
+	Query_HasOrderby            int
 	Query_INDEX_MERGE           bool
 	SetRowFormat                int
 	SetClustered                int
@@ -92,7 +93,7 @@ var DefaultWeight = Weight{
 	CreateTable_MustIntCol:      false,
 	Query:                       15,
 	Query_DML:                   20,
-	Query_Select:                1,
+	Query_Select:                15,
 	Query_DML_DEL:               1,
 	Query_DML_DEL_INDEX:         0,
 	Query_DML_DEL_COMMON:        1,
@@ -107,6 +108,7 @@ var DefaultWeight = Weight{
 	Query_Analyze:               0,
 	Query_Prepare:               2,
 	Query_HasLimit:              1,
+	Query_HasOrderby:            1,
 	SetClustered:                1,
 	SetRowFormat:                1,
 	AdminCheck:                  1,
