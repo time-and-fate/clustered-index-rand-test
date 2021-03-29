@@ -109,7 +109,7 @@ func GenNewIndex(id int, tbl *Table, w *Weight) *Index {
 	if !tbl.containsPK && !idx.HasDefaultNullColumn() {
 		tbl.containsPK = true
 		idx.Tp = IndexTypePrimary
-		idx.Name = ""
+		idx.Name = "PRIMARY"
 	} else {
 		// Exclude primary key type.
 		idx.Tp = IndexType(rand.Intn(int(IndexTypePrimary)))
