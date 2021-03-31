@@ -41,6 +41,10 @@ func (s *State) GetRandPrepare() *Prepare {
 	return s.prepareStmts[rand.Intn(len(s.prepareStmts))]
 }
 
+func (s *State) GetAllTbls() []*Table {
+	return s.tables
+}
+
 func (t *Table) GetRandColumn() *Column {
 	return t.Columns[rand.Intn(len(t.Columns))]
 }
